@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
-            <Grid Width="100" Height="100" Background="#FF222428"/>
+            <Ellipse Width="75" Height="100" Fill="Gray"/>
         </ControlTemplate>
         
     </Page.Resources>
