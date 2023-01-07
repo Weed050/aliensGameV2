@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
-            <StackPanel Orientation="Vertical">
+            <!--<StackPanel Orientation="Vertical">
                 <Ellipse Stroke="Black" Width="75" Height="100" Fill="Gray" StrokeThickness="1"/>
                 <StackPanel Orientation="Vertical" Canvas.ZIndex="1">
                     <Ellipse Stroke="Black" Width="25" Height="35" Fill="Black" StrokeThickness="1" Canvas.ZIndex="1" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -25,7 +25,20 @@
                     </Ellipse.RenderTransform>
                 </Ellipse>
 
-            </StackPanel>
+            </StackPanel>-->
+            <Grid>
+                <Ellipse Fill="Gray" Height="100" Width="75" Stroke="Black"/>
+                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="35" Margin="40,20,70,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <CompositeTransform SkewX="10"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="35" Margin="70,20,40,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <CompositeTransform SkewX="-10"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Grid>
         </ControlTemplate>
 
 
