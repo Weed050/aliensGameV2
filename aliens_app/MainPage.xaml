@@ -65,7 +65,7 @@
         </Canvas>
         <StackPanel Grid.Column="2" Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap" Text="Ich unikaj!" TextAlignment="Center" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Height="105">
                 <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
             </StackPanel>
         </StackPanel>
