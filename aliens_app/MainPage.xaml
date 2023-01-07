@@ -10,9 +10,25 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
-            <Ellipse Width="75" Height="100" Fill="Gray"/>
+            <StackPanel Orientation="Vertical">
+                <Ellipse Stroke="Black" Width="75" Height="100" Fill="Gray" StrokeThickness="1"/>
+                <StackPanel Orientation="Vertical" Canvas.ZIndex="1">
+                    <Ellipse Stroke="Black" Width="25" Height="35" Fill="Black" StrokeThickness="1" Canvas.ZIndex="1" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <CompositeTransform TranslateX="-20" TranslateY="-76" SkewX="10"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                </StackPanel>
+                <Ellipse Stroke="Black" Width="25" Height="35" Fill="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <CompositeTransform TranslateY="-111" SkewX="-10" TranslateX="20"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+
+            </StackPanel>
         </ControlTemplate>
-        
+
+
     </Page.Resources>
 
     <Grid x:Name="grid" Background="#FF2B2B2B">
@@ -45,10 +61,13 @@
                     <CompositeTransform Rotation="45"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
+
         </Canvas>
         <StackPanel Grid.Column="2" Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap" Text="Ich unikaj!" TextAlignment="Center" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-            <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Vertical">
+                <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
+            </StackPanel>
         </StackPanel>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="25,46,0,0" TextWrapping="Wrap" Text="Ratujmy ludzi" VerticalAlignment="Top" Foreground="White" Height="55" Width="319" FontFamily="Verdana" FontSize="40"/>
 
